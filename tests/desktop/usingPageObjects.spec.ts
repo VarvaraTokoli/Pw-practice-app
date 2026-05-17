@@ -27,11 +27,3 @@ test('submit the form with parametrised method', async({page}) => {
 
     expect (await page.locator('nb-card', { hasText: 'Using the Grid' }).getByRole('textbox', { name: 'Email' }).inputValue()).toEqual(randomEmail);
 })
-
-//Placeholder to test the running tests from the GitHub actions
-test.only('testing with Git', async({page}) => {
-    const pageManager = new PageManager(page);
-
-    await pageManager.navigateTo().FormLayoutsPage();
-    await pageManager.navigateTo().DatepickerPage();
-})
