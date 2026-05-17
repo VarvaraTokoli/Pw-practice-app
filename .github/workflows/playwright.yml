@@ -17,6 +17,10 @@ jobs:
       run: npm ci --force
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps --force
+    - name: Start the app
+      run: npm start &
+    - name: Wait for app to start
+      run: npx wait-on http://localhost:4200
     - name: Run Playwright tests
       run: npx playwright test usingPageObjects.spec.ts --project=chromium
     - uses: actions/upload-artifact@v4
