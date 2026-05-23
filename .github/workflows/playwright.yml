@@ -23,6 +23,8 @@ jobs:
       run: npx wait-on http://localhost:4200
     - name: Run Playwright tests
       run: npx playwright test usingPageObjects.spec.ts --project=chromium
+      env:
+        ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
