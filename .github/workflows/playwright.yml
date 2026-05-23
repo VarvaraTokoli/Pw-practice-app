@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v5
-    - uses: actions/setup-node@v5
+    - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: 18
     - name: Install dependencies
       run: npm install --force
     - name: Install Playwright Browsers
